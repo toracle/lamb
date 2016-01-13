@@ -3,6 +3,6 @@ from pyaws_lambda import deploy_functions
 
 
 
-if __name__ == '__main__':
+def main():
     make_dist_package()
     deploy_functions()

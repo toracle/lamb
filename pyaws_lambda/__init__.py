@@ -5,6 +5,7 @@ from __future__ import (absolute_import, division, print_function, unicode_liter
 __version__ = "0.1.0"
 
 from .utils import read_yaml_config
+import boto3
 
 PATH_URLS_YAML = 'urls.yaml'
 PATH_PROJECT_YAML = 'project.yaml'

@@ -2,13 +2,13 @@
 
 from __future__ import (absolute_import, division, print_function, unicode_literals)
 
-import yaml
+from yaml import yaml_load
 
 
 def read_yaml_config(path):
     with file(path) as fin:
         content = fin.read()
-        return yaml.load(content)
+        return yaml_load(content)
 
 
 def camelcase_to_underscore(s):

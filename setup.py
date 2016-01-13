@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import re
 
 from setuptools import setup, find_packages
 from codecs import open
@@ -27,4 +28,5 @@ setup(
     description='Server stack with AWS Lambda',
     url='',
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
+    install_requires=['pyyaml', 'boto3'],
 )

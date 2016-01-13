@@ -3,8 +3,11 @@
 from __future__ import (absolute_import, division, print_function, unicode_literals)
 
 import os
+from botocore.exceptions import ClientError
 
-from zip_utils import zip_dir
+from . import CONFIG_PROJECT, DIST_PACKAGE_FILENAME, DIST_PACKAGE_DIR, LAMBDA_CLIENT, MODULES_DIR
+from .resources import Lambda
+from .zip_utils import zip_dir
 
 
 def deploy_functions():
@@ -19,7 +22,7 @@ def deploy_functions():
         except ClientError as e:
             error_code = e.response['Error']['Code']
             if error_code == 'ResourceConflictException':
-                lambda_function.update_function()
+                lambda_function.update_function_code()
 
 
 def make_dist_package():
