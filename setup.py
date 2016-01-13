@@ -18,13 +18,13 @@ def find_version(*file_paths):
         return version_match.group(1)
     raise RuntimeError("Unable to find version string.")
 
-version = find_version("serverless", "__init__.py")
+version = find_version("pyaws_lambda", "__init__.py")
 long_description = read('README.rst', encoding='utf-8')
 
 setup(
-    name='serverless',
+    name='pyaws_lambda',
     version=version,
-    description='Serverless stack with AWS Lambda',
+    description='Server stack with AWS Lambda',
     url='',
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
 )

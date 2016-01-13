@@ -1,5 +1,5 @@
-from serverless import make_dist_package
-from serverless import deploy_functions
+from pyaws_lambda import make_dist_package
+from pyaws_lambda import deploy_functions
 
 
 
