@@ -13,8 +13,8 @@ Here PyAWS-Lambda comes in. Our purpose is automate the process. Finally, if a d
 There is already an evolving framework, Serverless (formerly JAWS), but it supports only Javascript for now and uses CloudFormation which is heavy to understand. PyAWS-Lambda aims a lightweight script-like tool also for python.
 
 
-Example
--------
+Take a look
+-----------
 
 Directory structure::
 
@@ -22,11 +22,11 @@ Directory structure::
       project.yaml
       urls.yaml
       modules/
-        function1.py
-        function2.py
-        function3
-          __init__.py
-          run.py
+         function1.py
+         function2.py
+         function3/
+            __init__.py
+            run.py
 
 project.yaml
 
