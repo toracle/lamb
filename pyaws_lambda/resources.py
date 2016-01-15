@@ -57,7 +57,7 @@ class Lambda(object):
 
     def create_function(self):
         params = dict([(arg, getattr(self, camelcase_to_underscore(arg))) for arg in self.boto_params])
-        params['FunctionName'] = "{}:{}".format(self.project.name, self.function_name)
+        params['FunctionName'] = "{}--{}".format(self.project.name, self.function_name)
         self.project.client.create_function(**params)
 
     def update_function_code(self):
