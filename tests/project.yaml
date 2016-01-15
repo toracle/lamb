@@ -1,0 +1,13 @@
+project-name: test-lambda
+domain: test-lambda.ogqcorp.com
+depedencies:
+  - django==1.8.0
+functions:
+  - function_name: series
+    role: arn:aws:iam::997494235799:role/lambda_basic_execution
+    handler: series.json
+    publish: true
+  - function_name: hello
+    role: arn:aws:iam::997494235799:role/lambda_basic_execution
+    handler: hello.say
+    publish: true

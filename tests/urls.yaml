@@ -1,0 +1,11 @@
+urls:
+  - path: /series
+    method: GET
+    function:
+      handler: series.json
+      role: lambda_basic_execution
+  - path: /hello
+    method: GET
+    function:
+      handler: hello.say
+      role: lambda_basic_execution
