@@ -11,6 +11,11 @@ def read_yaml_config(path):
         return yaml_load(content)
 
 
+def read_binary(path):
+    with file(path, 'rb') as zfin:
+        return zfin.read()
+
+
 def camelcase_to_underscore(s):
     new_str = ''
     for index, char in enumerate(s):
