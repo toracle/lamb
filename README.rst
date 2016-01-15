@@ -18,15 +18,15 @@ Example
 
 Directory structure::
 
-   Project root
+   Project root/
       project.yaml
       urls.yaml
-        modules
-          function1.py
-          function2.py
-          function3
-            __init__.py
-            run.py
+      modules/
+        function1.py
+        function2.py
+        function3
+          __init__.py
+          run.py
 
 project.yaml
 
