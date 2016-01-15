@@ -16,10 +16,10 @@ Directory structure:
 - Project root
     - project.yaml
     - urls.yaml
-    - modules/
+    - modules
         - function1.py
         - function2.py
-        - function3/
+        - function3
             - __init__.py
             - run.py
 
