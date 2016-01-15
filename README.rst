@@ -9,3 +9,50 @@ Here PyAWS-Lambda comes in. Our purpose is automate the process. Finally, if a d
 
 There is already an evolving framework, Serverless (formerly JAWS), but it supports only Javascript for now and uses CloudFormation which is heavy to understand. PyAWS-Lambda aims a lightweight script-like tool also for python.
 
+Below is an example of project.
+
+Directory structure:
+
+::
+    - Project root
+      - project.yaml
+      - urls.yaml
+      - modules/
+        - function1.py
+        - function2.py
+        - function3/
+          - __init__.py
+          - run.py
+
+project.yaml
+
+.. code-block:: yaml
+
+    project-name: test-lambda
+    domain: test-lambda.mydomain.com
+    depedencies:
+       - django==1.8.0
+    functions:
+       - function_name: series
+         role: arn:aws:iam::<iam>:role/lambda_basic_execution
+         handler: series.json
+         publish: true
+       - function_name: hello
+         role: arn:aws:iam::<iam>:role/lambda_basic_execution
+         handler: hello.say
+         publish: true
+
+urls.yaml
+
+.. code-block:: yaml
+
+    urls:
+      - path: /series
+        method: GET
+        function:
+          handler: series.json
+          role: lambda_basic_execution
+      - path: /hello
+        method: GET
+        function:
+          handler: hello.say
