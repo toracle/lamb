@@ -13,16 +13,15 @@ Below is an example of project.
 
 Directory structure:
 
-::
-    - Project root
-      - project.yaml
-      - urls.yaml
-      - modules/
-        - function1.py
-        - function2.py
-        - function3/
-          - __init__.py
-          - run.py
+- Project root
+  - project.yaml
+  - urls.yaml
+  - modules/
+    - function1.py
+    - function2.py
+    - function3/
+      - __init__.py
+      - run.py
 
 project.yaml
 
