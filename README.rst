@@ -36,13 +36,14 @@ project.yaml
     domain: test-lambda.mydomain.com
     depedencies:
        - django==1.8.0
+    configurations:
+       defaults:
+          role: arn:aws:iam::<iam>:role/lambda_basic_execution
     functions:
        - function_name: series
-         role: arn:aws:iam::<iam>:role/lambda_basic_execution
          handler: series.json
          publish: true
        - function_name: hello
-         role: arn:aws:iam::<iam>:role/lambda_basic_execution
          handler: hello.say
          publish: true
 
@@ -53,13 +54,11 @@ urls.yaml
     urls:
       - path: /series
         method: GET
-        function:
-          handler: series.json
-          role: lambda_basic_execution
+        function: series
       - path: /hello
         method: GET
-        function:
-          handler: hello.say
+        function: hello
+
 
 Alternatives
 ------------
