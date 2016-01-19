@@ -10,7 +10,7 @@ But currently AWS Lambda has a poor UI. Developer should write a function, ZIP c
 
 Here PyAWS-Lambda comes in. Our purpose is automate the process. Finally, if a developer wants to build a web service, write a set of functions in a shape of micro web framework, just like flask, and simple deploy it with one command line execution.
 
-There is already an evolving framework, Serverless (formerly JAWS), but it supports only Javascript for now and uses CloudFormation which is heavy to understand. PyAWS-Lambda aims a lightweight script-like tool also for python.
+There is already an evolving framework, Serverless (formerly JAWS), but it supports only Javascript for now and uses CloudFormation which is heavy to understand. PyAWS-Lambda aims a lightweight script-like and python friendly tool.
 
 
 Take a look
