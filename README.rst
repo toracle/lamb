@@ -46,11 +46,6 @@ project.yaml
        - function_name: hello
          handler: hello.say
          publish: true
-
-urls.yaml
-
-.. code-block:: yaml
-
     urls:
       - path: /series
         method: GET
