@@ -60,3 +60,14 @@ urls.yaml
         method: GET
         function:
           handler: hello.say
+
+Alternatives
+------------
+
+There are some serverless frameworks leveraging AWS Lambda and API Gateway.
+
+* Serverless_: Built on node.js and only support javascript runtime for now.
+* Apex_: Built on Go and supports node.js, go, python.
+
+.. _Serverless: https://github.com/serverless/serverless
+.. _Apex: https://github.com/apex/apex
