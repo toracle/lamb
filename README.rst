@@ -65,3 +65,10 @@ There are some serverless frameworks leveraging AWS Lambda and API Gateway.
 
 .. _Serverless: https://github.com/serverless/serverless
 .. _Apex: https://github.com/apex/apex
+
+
+TODO
+----
+
+* Add API gateway setup part
+* Separate layers to enchance testability
