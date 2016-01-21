@@ -55,11 +55,14 @@ class Lambda(object):
         elif _type == tuple or _type == list:
             return [Lambda._load_each_function(project, _info) for _info in function_meta]
 
+    def get_canonical_function_name(self):
+        return "{}--{}".format(self.project.name, self.function_name)
+
     def create_function(self):
         params = dict([(arg, getattr(self, camelcase_to_underscore(arg))) for arg in self.boto_params])
-        params['FunctionName'] = "{}--{}".format(self.project.name, self.function_name)
+        params['FunctionName'] = self.get_canonical_function_name()
         self.project.client.create_function(**params)
 
     def update_function_code(self):
-        params = {'FunctionName': self.function_name, 'ZipFile': self.code['ZipFile'], 'Publish': self.publish}
+        params = {'FunctionName': self.get_canonical_function_name(), 'ZipFile': self.code['ZipFile'], 'Publish': self.publish}
         self.project.client.update_function_code(**params)
