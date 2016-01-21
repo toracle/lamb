@@ -28,9 +28,10 @@ def camelcase_to_underscore(s):
     return new_str
 
 
-def set_dict_to_instance(d, instance, args, args_with_default):
+def set_dict_to_instance(d, instance, args, args_with_default=None):
     for arg in args:
         setattr(instance, arg, d[arg])
 
-    for arg, default in args_with_default.items():
-        setattr(instance, arg, d.get(arg, default))
+    if args_with_default:
+        for arg, default in args_with_default.items():
+            setattr(instance, arg, d.get(arg, default))
