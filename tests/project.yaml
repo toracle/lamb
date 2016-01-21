@@ -11,3 +11,10 @@ functions:
     role: arn:aws:iam::997494235799:role/lambda_basic_execution
     handler: hello.say
     publish: true
+urls:
+  - path: /series
+    method: GET
+    function: series
+  - path: /hello
+    method: GET
+    function: hello
