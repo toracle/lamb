@@ -66,3 +66,27 @@ class Lambda(object):
     def update_function_code(self):
         params = {'FunctionName': self.get_canonical_function_name(), 'ZipFile': self.code['ZipFile'], 'Publish': self.publish}
         self.project.client.update_function_code(**params)
+
+
+class API(object):
+    def __init__(self):
+        self.project = None
+        self.path = None
+        self.method = None
+        self.function_name = None
+
+    @staticmethod
+    def _load_each_url(project, api_meta):
+        api = API()
+        api.project = project
+        set_dict_to_instance(api_meta, api, ['path', 'method', 'function_name'])
+        return api
+
+    @staticmethod
+    def load_urls(project, api_meta):
+        _type = type(api_meta)
+
+        if _type == dict:
+            return [API._load_each_url(project, api_meta)]
+        elif _type == tuple or _type == list:
+            return [API._load_each_url(project, meta) for meta in api_meta]
