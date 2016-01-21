@@ -1,20 +1,20 @@
-project-name: test-lambda
+project_name: test-lambda
 domain: test-lambda.ogqcorp.com
 depedencies:
   - django==1.8.0
 functions:
   - function_name: series
-    role: arn:aws:iam::997494235799:role/lambda_basic_execution
+    role: arn:aws:iam::role
     handler: series.json
     publish: true
   - function_name: hello
-    role: arn:aws:iam::997494235799:role/lambda_basic_execution
+    role: arn:aws:iam::role
     handler: hello.say
     publish: true
 urls:
   - path: /series
     method: GET
-    function: series
+    function_name: series
   - path: /hello
     method: GET
-    function: hello
+    function_name: hello
