@@ -22,8 +22,9 @@ class Project(object):
 
 
 class Lambda(object):
+    boto_params = ['FunctionName', 'Role', 'Handler', 'Code', 'Publish', 'Description', 'Runtime', 'Timeout', 'MemorySize']
+
     def __init__(self):
-        self.boto_params = ['FunctionName', 'Role', 'Handler', 'Code', 'Publish', 'Description', 'Runtime', 'Timeout', 'MemorySize']
         self.project = None
         self.function_name = None
         self.role = None
