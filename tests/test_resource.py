@@ -24,12 +24,19 @@ def test_load_lambda_meta():
 
     assert len(lambda_list) == 2
 
-    for lambda_function in lambda_list:
-        assert lambda_function.function_name in ['series', 'hello']
-        assert lambda_function.role == 'arn:aws:iam::role'
-        assert lambda_function.handler in ['series.json', 'hello.say']
-        assert lambda_function.publish is True
-        assert lambda_function.description == ''
+    l0 = lambda_list[0]
+    assert l0.function_name == 'series'
+    assert l0.role == 'arn:aws:iam::role'
+    assert l0.handler == 'series.json'
+    assert l0.publish is True
+    assert l0.description == ''
+
+    l1 = lambda_list[1]
+    assert l1.function_name == 'hello'
+    assert l1.role == 'arn:aws:iam::role'
+    assert l1.handler == 'hello.say'
+    assert l1.publish is True
+    assert l1.description == ''
 
 
 def test_load_api_meta():
