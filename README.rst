@@ -65,6 +65,7 @@ There are some serverless frameworks leveraging AWS Lambda and API Gateway.
 
 .. _Serverless: https://github.com/serverless/serverless
 .. _Apex: https://github.com/apex/apex
+.. _django-zappa: https://github.com/Miserlou/django-zappa
 
 
 TODO
