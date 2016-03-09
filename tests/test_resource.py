@@ -3,10 +3,10 @@
 from __future__ import (absolute_import, division, print_function, unicode_literals)
 
 import os
-from pyaws_lambda import Context
-from pyaws_lambda.resources import API
-from pyaws_lambda.resources import Lambda
-from pyaws_lambda.resources import Project
+from lamb import Context
+from lamb.resources import API
+from lamb.resources import Lambda
+from lamb.resources import Project
 
 
 def test_load_lambda_meta():

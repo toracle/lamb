@@ -5,8 +5,8 @@ from __future__ import (absolute_import, division, print_function, unicode_liter
 import os
 import sys
 
-import pyaws_lambda
-from pyaws_lambda import commands
+import lamb
+from lamb import commands
 
 if __package__ == '':
     path = os.path.dirname(os.path.dirname(__file__))
@@ -14,7 +14,7 @@ if __package__ == '':
 
 
 def main(args=None):
-    context = pyaws_lambda.Context.default_context()
+    context = lamb.Context.default_context()
     commands.make_dist_package(context)
     commands.deploy_functions(context)
 

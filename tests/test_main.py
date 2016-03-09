@@ -3,9 +3,9 @@
 from __future__ import (absolute_import, division, print_function, unicode_literals)
 
 import os
-from pyaws_lambda import Context
-from pyaws_lambda.commands import make_dist_package
-from pyaws_lambda.commands import deploy_functions
+from lamb import Context
+from lamb.commands import make_dist_package
+from lamb.commands import deploy_functions
 
 
 '''

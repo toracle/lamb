@@ -19,11 +19,11 @@ def find_version(*file_paths):
         return version_match.group(1)
     raise RuntimeError("Unable to find version string.")
 
-version = find_version("pyaws_lambda", "__init__.py")
+version = find_version("lamb", "__init__.py")
 long_description = read('README.rst', encoding='utf-8')
 
 setup(
-    name='pyaws_lambda',
+    name='lamb',
     version=version,
     description='Server stack with AWS Lambda',
     url='',
@@ -31,7 +31,7 @@ setup(
     install_requires=['pyyaml', 'boto3'],
     entry_points={
         'console_scripts': [
-            'pyaws_lambda = pyaws_lambda.__main__:main',
+            'lamb = lamb.__main__:main',
         ]
     },
 )
