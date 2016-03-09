@@ -32,8 +32,7 @@ project.yaml
 
 .. code-block:: yaml
 
-    project-name: test-lambda
-    domain: test-lambda.mydomain.com
+    name: test-lambda
     depedencies:
        - django==1.8.0
     configurations:
@@ -46,6 +45,7 @@ project.yaml
        - function_name: hello
          handler: hello.say
          publish: true
+    domain: test-lambda.mydomain.com
     urls:
       - path: /series
         method: GET

@@ -13,7 +13,7 @@ from .utils import read_binary
 
 def deploy_functions(context):
     client = context['LAMBDA_CLIENT']
-    project_name = context['CONFIG_PROJECT'].get('project_name')
+    project_name = context['CONFIG_PROJECT'].get('name')
     functions_info = context['CONFIG_PROJECT'].get('functions')
     code = read_binary(context['DIST_PACKAGE_FILENAME'])
 
