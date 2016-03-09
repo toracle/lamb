@@ -59,14 +59,18 @@ class Lambda(object):
     def get_canonical_function_name(self):
         return "{}--{}".format(self.project.name, self.function_name)
 
+    def check_response(self, response):
+        if response['ResponseMetadata']['HTTPStatusCode'] != 200:
+            raise Exception(response)
+
     def create_function(self):
         params = dict([(arg, getattr(self, camelcase_to_underscore(arg))) for arg in self.boto_params])
         params['FunctionName'] = self.get_canonical_function_name()
-        self.project.client.create_function(**params)
+        self.check_response(self.project.client.create_function(**params))
 
     def update_function_code(self):
         params = {'FunctionName': self.get_canonical_function_name(), 'ZipFile': self.code['ZipFile'], 'Publish': self.publish}
-        self.project.client.update_function_code(**params)
+        self.check_response(self.project.client.update_function_code(**params))
 
 
 class API(object):

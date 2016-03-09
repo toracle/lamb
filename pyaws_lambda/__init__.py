@@ -18,7 +18,12 @@ class Context(dict):
         context['DIST_PACKAGE_DIR'] = kwargs.get('DIST_PACKAGE_DIR', 'dists')
         context['DIST_PACKAGE_FILENAME'] = kwargs.get('DIST_PACKAGE_FILENAME', 'dists.zip')
         context['MODULES_DIR'] = kwargs.get('MODULES_DIR', 'modules')
-        context['CONFIG_URLS'] = read_yaml_config(context['PATH_URLS_YAML'])
+
         context['CONFIG_PROJECT'] = read_yaml_config(context['PATH_PROJECT_YAML'])
+        try:
+            context['CONFIG_URLS'] = read_yaml_config(context['PATH_URLS_YAML'])
+        except IOError:
+            context['CONFIG_URLS'] = {}
+
         context['LAMBDA_CLIENT'] = boto3.client('lambda')
         return context

@@ -29,4 +29,9 @@ setup(
     url='',
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
     install_requires=['pyyaml', 'boto3'],
+    entry_points={
+        'console_scripts': [
+            'pyaws_lambda = pyaws_lambda.__main__:main',
+        ]
+    },
 )
