@@ -55,6 +55,12 @@ project.yaml
         function: hello
 
 
+Usage (planned)::
+
+    pyaws-lambda createproject <project-name>
+    pyaws-lambda deploy
+
+
 Alternatives
 ------------
 
