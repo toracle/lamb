@@ -78,5 +78,7 @@ There are some serverless frameworks leveraging AWS Lambda and API Gateway.
 TODO
 ----
 
+* Deploy module with dependencies
+* Handle CLI arguments
 * Add API gateway setup part
 * Separate layers to enchance testability
