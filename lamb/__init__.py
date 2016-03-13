@@ -4,7 +4,9 @@ from __future__ import (absolute_import, division, print_function, unicode_liter
 
 __version__ = "0.1.0"
 
+import os
 from .utils import read_yaml_config
+from . import exceptions
 import boto3
 
 
@@ -15,9 +17,16 @@ class Context(dict):
 
         context['PATH_URLS_YAML'] = kwargs.get('PATH_URLS_YAML', 'urls.yaml')
         context['PATH_PROJECT_YAML'] = kwargs.get('PATH_PROJECT_YAML', 'project.yaml')
+
+        if not os.path.isfile(context['PATH_PROJECT_YAML']):
+            raise exceptions.ConfigurationInvalidException("Can't find project.yaml file")
+
         context['DIST_PACKAGE_DIR'] = kwargs.get('DIST_PACKAGE_DIR', 'dists')
         context['DIST_PACKAGE_FILENAME'] = kwargs.get('DIST_PACKAGE_FILENAME', 'dists.zip')
         context['MODULES_DIR'] = kwargs.get('MODULES_DIR', 'modules')
+
+        if not os.path.isdir(context['MODULES_DIR']):
+            raise exceptions.ConfigurationInvalidException("There is no modules directory")
 
         context['CONFIG_PROJECT'] = read_yaml_config(context['PATH_PROJECT_YAML'])
         try:

@@ -7,6 +7,7 @@ import sys
 
 import lamb
 from lamb import commands
+from lamb import exceptions
 
 if __package__ == '':
     path = os.path.dirname(os.path.dirname(__file__))
@@ -14,9 +15,12 @@ if __package__ == '':
 
 
 def main(args=None):
-    context = lamb.Context.default_context()
-    commands.make_dist_package(context)
-    commands.deploy_functions(context)
+    try:
+        context = lamb.Context.default_context()
+        commands.make_dist_package(context)
+        commands.deploy_functions(context)
+    except exceptions.ConfigurationInvalidException as e:
+        print(e)
 
 
 if __name__ == '__main__':
