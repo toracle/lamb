@@ -4,10 +4,13 @@ from __future__ import (absolute_import, division, print_function, unicode_liter
 
 __version__ = "0.1.0"
 
+import sys
 import os
-from .utils import read_yaml_config
-from . import exceptions
 import boto3
+
+from . import commands
+from . import exceptions
+from .utils import read_yaml_config
 
 
 class Context(dict):
@@ -36,3 +39,20 @@ class Context(dict):
 
         context['LAMBDA_CLIENT'] = boto3.client('lambda')
         return context
+
+
+def main(args=None):
+    if args is None:
+        args = sys.argv[1:]
+
+    try:
+        #cmd_name, cmd_args = parseopts(args)
+        pass
+    except Exception as exc:
+        sys.stderr.write('ERROR: {}'.format(exc))
+        sys.stderr.write(os.linesep)
+        sys.exit(1)
+
+    context = Context.default_context()
+    commands.make_dist_package(context)
+    commands.deploy_functions(context)

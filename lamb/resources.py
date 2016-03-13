@@ -60,7 +60,7 @@ class Lambda(object):
         return "{}--{}".format(self.project.name, self.function_name)
 
     def check_response(self, response):
-        if response['ResponseMetadata']['HTTPStatusCode'] != 200:
+        if response['ResponseMetadata']['HTTPStatusCode'] not in [200, 201]:
             raise Exception(response)
 
     def create_function(self):

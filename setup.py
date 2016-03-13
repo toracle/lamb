@@ -31,7 +31,7 @@ setup(
     install_requires=['pyyaml', 'boto3'],
     entry_points={
         'console_scripts': [
-            'lamb = lamb.__main__:main',
+            'lamb = lamb:main',
         ]
     },
 )
