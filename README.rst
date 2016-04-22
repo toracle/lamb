@@ -69,10 +69,12 @@ There are some serverless frameworks leveraging AWS Lambda and API Gateway.
 * Serverless_: Built on node.js and only support javascript runtime for now.
 * Apex_: Built on Go and supports node.js, go, python.
 * Zappa_: Serverless WSGI with AWS lambda + API Gateway
+* Python-Lambda_: A toolkit for developing and deploying serverless Python code in AWS Lambda
 
 .. _Serverless: https://github.com/serverless/serverless
 .. _Apex: https://github.com/apex/apex
 .. _Zappa: https://github.com/Miserlou/django-zappa
+.. _Python-Lambda: https://github.com/nficano/python-lambda
 
 
 TODO
